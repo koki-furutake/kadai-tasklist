@@ -4,7 +4,7 @@
   <% @tasks.each do |task| %>           <!--Controllerから渡された@taskのレコードをeachをつかってtaskとしてとりだしcontentカラム値を表示-->
     <li>
       <%= link_to task.id,task %>       <!--link_to 表示文字列,リンク先-->
-      <%= tasks.status %>
+      <%= task.status %>
        &gt;
       <%= task.content %>
     </li>

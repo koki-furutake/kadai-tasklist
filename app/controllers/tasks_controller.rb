@@ -18,7 +18,7 @@ class TasksController < ApplicationController
       flash[:success] = "タスクが正常に追加されました"
       redirect_to @tasks
     else
-      falsh.now[:danger] = "タスクが追加されませんでした"
+      flash.now[:danger] = "タスクが追加されませんでした"
       render :new
     end
   end
