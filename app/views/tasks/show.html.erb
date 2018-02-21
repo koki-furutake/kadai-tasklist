@@ -1,6 +1,7 @@
 <h1>id: 
 <%= @tasks.id %>
- のタスクの詳細</h1>
+ のタスクの詳細
+</h1>
 <p>ステータス:
 <%= @tasks.status %>
 </p>
@@ -10,5 +11,5 @@
 </p>
 
 <%= link_to "タスク一覧に戻る",tasks_path %>
-<%= link_to "このタスクを編集する",edit_task_path(@tasks) %>
-<%= link_to 'このタスクを削除する', @tasks, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<%= link_to "このタスクを編集する",edit_task_path(@tasks),class: 'btn btn-default' %>
+<%= link_to 'このタスクを削除する', @tasks, method: :delete, data: { confirm: '本当に削除してよろしいですか？' },class: 'btn btn-danger' %>

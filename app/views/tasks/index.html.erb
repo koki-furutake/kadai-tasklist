@@ -1,14 +1,26 @@
 <h1>タスク一覧</h1>
 
-<ul>
-  <% @tasks.each do |task| %>           <!--Controllerから渡された@taskのレコードをeachをつかってtaskとしてとりだしcontentカラム値を表示-->
-    <li>
-      <%= link_to task.id,task %>       <!--link_to 表示文字列,リンク先-->
-      <%= task.status %>
-       &gt;
-      <%= task.content %>
-    </li>
-  <% end %>
-</ul>
+<% if @tasks.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>タイトル</th>
+        <th>メッセージ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tasks.each do |task| %>          
+        <tr>
+          <td><%= link_to task.id,task %></td>    
+          <td><%= task.status %></td>
+          &gt;
+          <td><%= task.content %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
 
-<%= link_to "新規タスクの追加",new_task_path %>
+
+<%= link_to '新規タスクの追加', new_task_path %>
